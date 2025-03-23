@@ -1,0 +1,110 @@
+/* Hero.css */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Modo claro */
+    color: #333; /* Texto no modo claro */
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 80px; /* Para garantir que o conteúdo não fique oculto abaixo do header fixo */
+  }
+  
+  .hero.dark {
+    background-color: #333; /* Modo escuro */
+    color: #f9f9f9; /* Texto no modo escuro */
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+  }
+  
+  .hero-text {
+    max-width: 600px;
+    margin-left: 30px;
+  }
+  
+  .hero-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333; /* Texto no modo claro */
+  }
+  
+  .hero.dark .hero-text h2 {
+    color: #f9f9f9; /* Texto no modo escuro */
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+  }
+  
+  .hero.dark .hero-text p {
+    color: #f9f9f9; /* Texto no modo escuro */
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+  }
+  
+  .hero.dark .cta-button {
+    background-color: #128c7e; /* Botão no modo escuro */
+  }
+  
+  .hero.dark .cta-button:hover {
+    background-color: #25d366;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 30px 15px;
+    }
+  
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .hero-text {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .hero-image img {
+      max-width: 80%;
+      mask-image: none; /* Remove a máscara em telas menores para melhor visibilidade */
+    }
+  }
+  
