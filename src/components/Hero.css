@@ -3,12 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 50px 60px;
     background-color: #f9f9f9; /* Modo claro */
     color: #333; /* Texto no modo claro */
     box-sizing: border-box;
     width: 100%;
-    margin-top: 80px; /* Para garantir que o conteúdo não fique oculto abaixo do header fixo */
+    max-width: 1300px;
+    margin-top: 70px; /* Para garantir que o conteúdo não fique oculto abaixo do header fixo */
   }
   
   .hero.dark {
@@ -21,20 +22,28 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1900px;
+    margin: 0 20px; /* Garantir que haja margem ao redor do conteúdo */
   }
   
   .hero-image {
     position: relative;
     width: 100%;
     max-width: 400px;
+    height: 400px; /* Mantém a imagem quadrada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que a borda arredondada funcione corretamente */
   }
   
   .hero-image img {
     width: 100%;
-    height: auto;
-    border-radius: 10%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço mantendo o foco */
+    border-radius: 50%; /* Transforma em círculo */
   }
+  
   
   .hero-text {
     max-width: 600px;
@@ -95,6 +104,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      margin: 0 15px; /* Adicionando margem lateral em dispositivos móveis */
     }
   
     .hero-text {
@@ -103,8 +114,9 @@
     }
   
     .hero-image img {
-      max-width: 80%;
+      max-width: 80%; /* A imagem ocupará no máximo 80% da largura disponível */
       mask-image: none; /* Remove a máscara em telas menores para melhor visibilidade */
+      margin: 0 auto; /* Garante que a imagem fique centralizada */
     }
   }
   

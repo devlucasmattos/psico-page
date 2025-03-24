@@ -12,51 +12,52 @@
     top: 0;
     left: 0;
     z-index: 1000;
-  }
-  
-  .header.dark {
+}
+
+.header.dark {
     background-color: #272727;
     color: #ffffff;
-  }
-  
-  .logo {
+}
+
+.logo {
     font-size: 24px;
-  }
-  
-  .name {
+}
+
+.name {
     font-size: 20px;
     font-weight: bold;
-  }
-  
-  .nav-content {
+}
+
+.nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between; 
     width: 100%; 
-  }
-  
-  nav {
+}
+
+nav {
     display: flex;
     align-items: center;
-    
-  }
+}
 
-  nav button {
+nav button {
     margin: 0 10px;
     padding: 8px 15px;
     border: none;
     cursor: pointer;
     background: none;
     font-size: 16px;
-  }
+    color: #333; /* Cor para o modo claro */
+    transition: color 0.3s ease;
+}
 
-    .nav button:hover {
+nav button:hover {
     color: #128c7e;
     transition: background-color 0.3s ease, transform 0.3s ease;
     transform: scale(1.05);
-  }
+}
 
-  .whatsapp-button {
+.whatsapp-button {
     margin: 0 10px;
     padding: 10px 20px;
     border: none;
@@ -67,13 +68,13 @@
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .whatsapp-button:hover {
+}
+
+.whatsapp-button:hover {
     background-color: #128c7e;
     transform: scale(1.05);
-  }
-  
+}
+
 /* Estilo básico do botão de dark mode */
 .dark-mode-btn {
     background: transparent;
@@ -82,73 +83,58 @@
     font-size: 24px;
     color: #000;
     transition: color 0.3s ease;
-  }
-  
-  /* Estilos quando em modo escuro */
-  .dark-mode-btn.dark {
+}
+
+/* Estilos quando em modo escuro */
+.dark-mode-btn.dark {
     color: #fff; /* Altere a cor do ícone quando no modo escuro */
-  }
-  
-  /* Estilos quando em modo claro */
-  .dark-mode-btn.light {
+}
+
+/* Estilos quando em modo claro */
+.dark-mode-btn.light {
     color: #000; /* Cor do ícone no modo claro */
-  }
-  
-  
-  .nav-content {
+}
+
+.nav-content {
     max-width: 900px;
-  }
-  
-  .nav.dark {
+}
+
+.nav.dark {
     background-color: #272727;
     color: #fff;
-  }
-  
-  .nav button,
-  .nav a {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .nav a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .nav.dark button,
-  .nav.dark a {
-    color: white;
-  }
-  
-  .nav.dark .whatsapp-button {
-    background-color: #25d366;
-  }
-  
-  .nav.dark .whatsapp-button:hover {
+}
+
+.nav.dark button,
+.nav.dark a {
+    color: white; /* Garantir que o texto no modo escuro seja branco */
+}
+
+.nav.dark .whatsapp-button {
     background-color: #128c7e;
-  }
-  
-  /* Menu Hamburguer */
-  .menu-toggle {
+}
+
+.nav.dark .whatsapp-button:hover {
+    background-color: #25d366;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
     background: none;
     border: none;
     padding: 10px;
-  }
-  
-  .menu-bar {
+}
+
+.menu-bar {
     width: 25px;
     height: 3px;
     background-color: #333;
     margin: 4px 0;
-  }
-  
-  .nav.open {
+}
+
+.nav.open {
     position: absolute;
     top: 70px;
     right: 0;
@@ -156,25 +142,24 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 9999;
-  }
-  
-  .nav.dark.open {
+}
+
+.nav.dark.open {
     background-color: #333;
     color: white;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .nav {
-      display: none;
+        display: none;
     }
-  
+
     .menu-toggle {
-      display: flex;
+        display: flex;
     }
-  
+
     .nav.open {
-      display: block;
+        display: block;
     }
-  }
-  
+}

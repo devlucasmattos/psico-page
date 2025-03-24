@@ -1,26 +1,49 @@
-/* styles.css */
+@import './reset.css';
 
 :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color-scheme: light dark;
-    color: #333;
-    background-color: #f4f4f4;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    background: #fff;
-    color: #333;
-  }
-  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Variáveis de cores para o tema claro */
+  --background-color-light: #f4f4f4;
+  --background-color-dark: #121212;
+  --text-color-light: #333;
+  --text-color-dark: #fff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Garante que o body ocupe toda a altura da tela */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+body.dark {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Garantir que o root ocupe no mínimo 90% da altura da tela */
+#root {
+  min-width: 65%; 
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo de forma vertical */
+  align-items: center;
+}

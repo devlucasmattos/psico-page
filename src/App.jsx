@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
+import './reset.css';
 import "./styles.css";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
+import About from "./components/About"
+import Services from "./components/Services"
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark");
@@ -16,6 +19,8 @@ export default function App() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
         <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
+        <Services darkMode={darkMode} />
       </main>
     </div>
   );
