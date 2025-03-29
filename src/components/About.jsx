@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import sobreImage from "../assets/profissional.png"; // Foto ou imagem representativa
+import profissionalImg from "../assets/profissional.png";
 
 const About = ({ darkMode }) => {
   return (
@@ -20,7 +20,7 @@ const About = ({ darkMode }) => {
         </div>
         <div className="sobre-image">
           <img 
-            src={sobreImage} 
+            src={profissionalImg} 
             alt="Imagem da psicóloga" 
           />
         </div>

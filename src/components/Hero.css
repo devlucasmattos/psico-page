@@ -1,122 +1,133 @@
 /* Hero.css */
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 60px;
-    background-color: #f9f9f9; /* Modo claro */
-    color: #333; /* Texto no modo claro */
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1300px;
-    margin-top: 70px; /* Para garantir que o conteúdo não fique oculto abaixo do header fixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background-color: var(--section-bg-light);
+  color: var(--text-light);
+  width: 100%;
+  margin-top: 70px;
+  box-sizing: border-box;
+}
+
+.hero.dark {
+  background-color: var(--section-bg-dark);
+  color: var(--text-dark);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-color);
+}
+
+.hero-text {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.dark .hero-text {
+  color: var(--text-dark);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--whatsapp-green);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  border-radius: 2rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.cta-button:hover {
+  background-color: var(--whatsapp-dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .cta-button {
+  background-color: var(--whatsapp-dark-green);
+}
+
+.dark .cta-button:hover {
+  background-color: var(--whatsapp-green);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2.5rem 1rem;
+    margin-top: 60px;
   }
-  
-  .hero.dark {
-    background-color: #333; /* Modo escuro */
-    color: #f9f9f9; /* Texto no modo escuro */
+
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
   }
-  
+
   .hero-content {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1900px;
-    margin: 0 20px; /* Garantir que haja margem ao redor do conteúdo */
   }
-  
-  .hero-image {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 400px; /* Mantém a imagem quadrada */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Garante que a borda arredondada funcione corretamente */
+
+  .hero-image-container {
+    max-width: 280px;
   }
-  
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço mantendo o foco */
-    border-radius: 50%; /* Transforma em círculo */
-  }
-  
-  
-  .hero-text {
-    max-width: 600px;
-    margin-left: 30px;
-  }
-  
-  .hero-text h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333; /* Texto no modo claro */
-  }
-  
-  .hero.dark .hero-text h2 {
-    color: #f9f9f9; /* Texto no modo escuro */
-  }
-  
-  .hero-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 20px 0;
-  }
-  
-  .hero.dark .hero-text p {
-    color: #f9f9f9; /* Texto no modo escuro */
-  }
-  
+
   .cta-button {
-    display: inline-block;
-    background-color: #25d366;
-    color: white;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-container {
+    gap: 1.5rem;
   }
   
-  .cta-button:hover {
-    background-color: #128c7e;
-    transform: scale(1.05);
+  .hero-image-container {
+    max-width: 350px;
   }
-  
-  .hero.dark .cta-button {
-    background-color: #128c7e; /* Botão no modo escuro */
-  }
-  
-  .hero.dark .cta-button:hover {
-    background-color: #25d366;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .hero {
-      padding: 30px 15px;
-    }
-  
-    .hero-content {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin: 0 15px; /* Adicionando margem lateral em dispositivos móveis */
-    }
-  
-    .hero-text {
-      margin-left: 0;
-      text-align: center;
-    }
-  
-    .hero-image img {
-      max-width: 80%; /* A imagem ocupará no máximo 80% da largura disponível */
-      mask-image: none; /* Remove a máscara em telas menores para melhor visibilidade */
-      margin: 0 auto; /* Garante que a imagem fique centralizada */
-    }
-  }
-  
+}

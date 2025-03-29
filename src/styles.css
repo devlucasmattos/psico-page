@@ -11,39 +11,189 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Variáveis de cores para o tema claro */
-  --background-color-light: #f4f4f4;
-  --background-color-dark: #121212;
-  --text-color-light: #333;
-  --text-color-dark: #fff;
+  /* Cores base */
+  --primary-color: #4a6fa5;
+  --primary-light: #e1e8f5;
+  --primary-dark: #3a5a80;
+  --accent-color: #ff6b6b;
+  
+  /* Light Mode */
+  --bg-light: #f9f9f9;
+  --text-light: #333;
+  --text-secondary-light: #666;
+  --section-bg-light: #f0f4f8;
+  --card-bg-light: #ffffff;
+  --card-border-light: #e2e8f0;
+  
+  /* Dark Mode */
+  --bg-dark: #121212;
+  --text-dark: #f0f0f0;
+  --text-secondary-dark: #a0aec0;
+  --section-bg-dark: #1e293b;
+  --card-bg-dark: #2d3748;
+  --card-border-dark: #4a5568;
+  
+  /* Tamanhos */
+  --max-width: 1200px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Garante que o body ocupe toda a altura da tela */
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 320px;
   min-height: 100vh;
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  width: 100%;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
 }
 
 body.dark {
-  background-color: var(--background-color-dark);
-  color: var(--text-color-dark);
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
-/* Garantir que o root ocupe no mínimo 90% da altura da tela */
 #root {
-  min-width: 65%; 
+  width: 100%;
   display: flex;
-  flex-direction: column; /* Organiza o conteúdo de forma vertical */
+  flex-direction: column;
   align-items: center;
+}
+
+/* Container Principal */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* Tipografia Responsiva */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+p, li {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* Links & Botões */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Seções */
+section {
+  padding: 4rem 1rem;
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.dark .card {
+  background: var(--card-bg-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Responsividade - Mobile First */
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.6s ease-out forwards;
 }
