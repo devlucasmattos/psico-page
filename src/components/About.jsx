@@ -4,7 +4,7 @@ import profissionalImg from "../assets/profissional.png";
 
 const About = ({ darkMode }) => {
   return (
-    <section className={`sobre ${darkMode ? "dark" : "light"}`}>
+    <section className={`sobre ${darkMode ? "dark" : "light"}`} id="sobre">
       <div className="sobre-content">
         <div className="sobre-text">
           <h2>Sobre Mim</h2>

@@ -11,24 +11,55 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(() => {
+    // Verifica o tema preferido do sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem("theme");
+    
+    return savedTheme 
+      ? savedTheme === "dark"
+      : prefersDark;
+  });
 
   useEffect(() => {
+    // Aplica o tema ao body
     document.body.className = darkMode ? "dark" : "light";
     localStorage.setItem("theme", darkMode ? "dark" : "light");
+    
+    // Adiciona classe ao html para melhor suporte a dark mode
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   return (
     <div className={`app ${darkMode ? "dark" : "light"}`}>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      
       <main>
-        <Hero darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Services darkMode={darkMode} />
-        <Testimonials darkMode={darkMode} />
-        <FAQ darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <div className="main-container">
+          <Hero darkMode={darkMode} />
+        </div>
+        
+        <div className="main-container">
+          <About darkMode={darkMode} />
+        </div>
+        
+        <div className="main-container">
+          <Services darkMode={darkMode} />
+        </div>
+        
+        <div className="main-container">
+          <Testimonials darkMode={darkMode} />
+        </div>
+        
+        <div className="main-container">
+          <FAQ darkMode={darkMode} />
+        </div>
+        
+        <div className="main-container">
+          <Contact darkMode={darkMode} />
+        </div>
       </main>
+      
       <Footer darkMode={darkMode} />
     </div>
   );
