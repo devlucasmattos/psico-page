@@ -5,39 +5,62 @@ import { Instagram, Facebook, Linkedin } from "lucide-react";
 const Footer = ({ darkMode }) => {
   return (
     <footer className={`footer ${darkMode ? "dark" : "light"}`}>
-      <div className="footer-content">
-        <div className="footer-section">
-          <h3>Magda Mattos</h3>
-          <p>Psicóloga Clínica - CRP 00/00000</p>
-          <p>Especialista em Terapia Cognitivo-Comportamental</p>
-        </div>
-        <div className="footer-section">
-          <h3>Links Rápidos</h3>
-          <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-        <div className="footer-section">
-          <h3>Redes Sociais</h3>
-          <div className="social-icons">
-            <a href="https://instagram.com" aria-label="Instagram">
-              <Instagram />
-            </a>
-            <a href="https://facebook.com" aria-label="Facebook">
-              <Facebook />
-            </a>
-            <a href="https://linkedin.com" aria-label="LinkedIn">
-              <Linkedin />
-            </a>
+      <div className="footer-container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <div className="footer-logo">🧠</div>
+            <div>
+              <h3 className="footer-title">Magda Mattos</h3>
+              <p className="footer-subtitle">Psicóloga Clínica</p>
+              <p className="footer-crp">CRP 00/00000</p>
+            </div>
+          </div>
+
+          <div className="footer-links">
+            <h4 className="footer-heading">Navegação</h4>
+            <ul>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#faq">Dúvidas</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-contact">
+            <h4 className="footer-heading">Contato</h4>
+            <address>
+              <p>(53) 99124-4320</p>
+              <p>contato@magdamattos.com</p>
+              <p>Seg-Sex: 8h às 19h</p>
+              <p>Sábado: 8h às 12h</p>
+            </address>
+          </div>
+
+          <div className="footer-social">
+            <h4 className="footer-heading">Redes Sociais</h4>
+            <div className="social-links">
+              <a href="https://instagram.com" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" aria-label="Facebook">
+                <Facebook size={20} />
+              </a>
+              <a href="https://linkedin.com" aria-label="LinkedIn">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Magda Mattos Psicóloga. Todos os direitos reservados.</p>
+
+        <div className="footer-bottom">
+          <p className="copyright">
+            &copy; {new Date().getFullYear()} Magda Mattos Psicóloga. Todos os direitos reservados.
+          </p>
+          <p className="disclaimer">
+            As informações contidas neste site não substituem o acompanhamento psicológico profissional.
+          </p>
+        </div>
       </div>
     </footer>
   );
