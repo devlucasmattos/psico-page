@@ -20,7 +20,7 @@ const Footer = ({ darkMode }) => {
             <h4 className="footer-heading">Navegação</h4>
             <ul>
               <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#services">Serviços</a></li>
               <li><a href="#depoimentos">Depoimentos</a></li>
               <li><a href="#faq">Dúvidas</a></li>
               <li><a href="#contato">Contato</a></li>
@@ -55,10 +55,10 @@ const Footer = ({ darkMode }) => {
 
         <div className="footer-bottom">
           <p className="copyright">
-            &copy; {new Date().getFullYear()} Magda Mattos Psicóloga. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Magda Mattos. Todos os direitos reservados.
           </p>
-          <p className="disclaimer">
-            As informações contidas neste site não substituem o acompanhamento psicológico profissional.
+          <p className="developer-credit">
+            Desenvolvido por <a href="https://devlucasmattos.com" target="_blank" rel="noopener noreferrer">Lucas Mattos</a>
           </p>
         </div>
       </div>

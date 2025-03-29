@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -35,28 +36,44 @@ export default function App() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <main>
-        <div className="main-container">
-          <Hero darkMode={darkMode} />
+        {/* Adiciona o componente de partículas aqui */}
+        <ParticlesBackground darkMode={darkMode} />
+        
+        {/* Envolva cada seção em uma div container para o efeito de sobreposição */}
+        <div className="section-container">
+          <div className="main-container">
+            <Hero darkMode={darkMode} />
+          </div>
         </div>
         
-        <div className="main-container">
-          <About darkMode={darkMode} />
+        <div className="section-container">
+          <div className="main-container">
+            <About darkMode={darkMode} />
+          </div>
         </div>
         
-        <div className="main-container">
-          <Services darkMode={darkMode} />
+        <div className="section-container">
+          <div className="main-container">
+            <Services darkMode={darkMode} />
+          </div>
         </div>
         
-        <div className="main-container">
-          <Testimonials darkMode={darkMode} />
+        <div className="section-container">
+          <div className="main-container">
+            <Testimonials darkMode={darkMode} />
+          </div>
         </div>
         
-        <div className="main-container">
-          <FAQ darkMode={darkMode} />
+        <div className="section-container">
+          <div className="main-container">
+            <FAQ darkMode={darkMode} />
+          </div>
         </div>
         
-        <div className="main-container">
-          <Contact darkMode={darkMode} />
+        <div className="section-container">
+          <div className="main-container">
+            <Contact darkMode={darkMode} />
+          </div>
         </div>
       </main>
       

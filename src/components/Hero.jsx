@@ -8,7 +8,7 @@ const Hero = ({ darkMode }) => {
     <section className={`hero ${darkMode ? "dark" : "light"}`} id="inicio">
       <div className="hero-container">
         <div className="hero-content">
-          <h1 className="hero-title">Bem-vindo(a) ao seu momento de transformação!</h1>
+          <h1 className="hero-title">Bem-vindo(a)<br></br> ao seu momento de transformação!</h1>
           <div className="divider"></div>
           <p className="hero-text">
             Atendimento psicológico especializado com abordagem <strong>cognitivo-comportamental</strong> para ajudar você a alcançar bem-estar emocional e qualidade de vida.
