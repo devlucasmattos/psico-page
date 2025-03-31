@@ -44,6 +44,11 @@ const Header = ({ darkMode, setDarkMode }) => {
     }
   };
 
+  // URL do WhatsApp adaptada para iOS
+  const whatsappUrl = navigator.userAgent.match(/iPhone|iPad|iPod/i) 
+    ? 'whatsapp://send?phone=555391039430' 
+    : 'https://wa.me/555391039430';
+
   return (
     <header className={`header ${darkMode ? "dark" : ""} ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <div className="header-brand">
@@ -79,10 +84,14 @@ const Header = ({ darkMode, setDarkMode }) => {
             <button onClick={() => scrollToSection("faq")}>Saiba mais</button>
             <button onClick={() => scrollToSection("contato")}>Contato</button>
             <a
-              href="https://wa.me/555391039430"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-button"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(whatsappUrl, '_blank');
+              }}
             >
               Agende uma sessão
             </a>
