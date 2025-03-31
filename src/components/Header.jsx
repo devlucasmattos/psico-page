@@ -29,7 +29,6 @@ const Header = ({ darkMode, setDarkMode }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    // Adiciona/remove a classe menu-open no header
     const header = document.querySelector('.header');
     header.classList.toggle('menu-open', !menuOpen);
   };
@@ -41,7 +40,6 @@ const Header = ({ darkMode, setDarkMode }) => {
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
       setMenuOpen(false);
-      // Remove a classe menu-open quando o menu é fechado
       document.querySelector('.header').classList.remove('menu-open');
     }
   };
@@ -49,8 +47,17 @@ const Header = ({ darkMode, setDarkMode }) => {
   return (
     <header className={`header ${darkMode ? "dark" : ""} ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <div className="header-brand">
-        <div className="logo">🧠</div>
-        <h1 className="name">Magda Mattos</h1>
+        <div className="logo">
+          <img 
+            src="./icone-semfundo-magda.png" 
+            alt="Logo Psicóloga Magda Mattos" 
+            className="logo-image"
+          />
+        </div>
+        <div className="name-container">
+          <h1 className="name">Magda Mattos</h1>
+          <p className="crp">CRP 07/23252</p>
+        </div>
       </div>
       
       <div className="nav-content">
@@ -72,7 +79,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             <button onClick={() => scrollToSection("faq")}>Saiba mais</button>
             <button onClick={() => scrollToSection("contato")}>Contato</button>
             <a
-              href="https://wa.me/5553991244320"
+              href="https://wa.me/555391039430"
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-button"

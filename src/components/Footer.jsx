@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Footer = ({ darkMode }) => {
   return (
@@ -8,11 +8,17 @@ const Footer = ({ darkMode }) => {
       <div className="footer-container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div className="footer-logo">🧠</div>
+          <div className="logo">
+          <img 
+            src="./icone-semfundo-magda.png" 
+            alt="Logo Psicóloga Magda Mattos" 
+            className="logo-image"
+          />
+        </div>
             <div>
               <h3 className="footer-title">Magda Mattos</h3>
               <p className="footer-subtitle">Psicóloga Clínica</p>
-              <p className="footer-crp">CRP 00/00000</p>
+              <p className="footer-crp">CRP 07/23252</p>
             </div>
           </div>
 
@@ -30,8 +36,8 @@ const Footer = ({ darkMode }) => {
           <div className="footer-contact">
             <h4 className="footer-heading">Contato</h4>
             <address>
-              <p>(53) 99124-4320</p>
-              <p>contato@magdamattos.com</p>
+              <p>+55 53 9103-9430</p>
+              <p>magdapsico@hotmail.com</p>
               <p>Seg-Sex: 8h às 19h</p>
               <p>Sábado: 8h às 12h</p>
             </address>
@@ -40,14 +46,8 @@ const Footer = ({ darkMode }) => {
           <div className="footer-social">
             <h4 className="footer-heading">Redes Sociais</h4>
             <div className="social-links">
-              <a href="https://instagram.com" aria-label="Instagram">
+              <a href="https://www.instagram.com/psico.magda/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram size={20} />
-              </a>
-              <a href="https://facebook.com" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://linkedin.com" aria-label="LinkedIn">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>

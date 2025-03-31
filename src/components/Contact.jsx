@@ -29,7 +29,7 @@ const Contact = ({ darkMode }) => {
     e.preventDefault();
     const whatsappMessage = `Olá, meu nome é ${formData.name}. ${formData.message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/5553991244320?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/555391039430?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -48,8 +48,8 @@ const Contact = ({ darkMode }) => {
                 <Phone className="contact-icon" size={24} />
               </div>
               <div className="contact-text">
-                <h3>Telefone</h3>
-                <p>(53) 99124-4320</p>
+                <h3>WhatsApp</h3>
+                <p>+55 53 9103-9430</p>
               </div>
             </div>
             
@@ -59,7 +59,7 @@ const Contact = ({ darkMode }) => {
               </div>
               <div className="contact-text">
                 <h3>Email</h3>
-                <p>contato@magdamattos.com</p>
+                <p>magdapsico@hotmail.com</p>
               </div>
             </div>
             
