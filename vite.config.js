@@ -4,7 +4,10 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/psico-page/',
+  base: '/',  // Isso é essencial para domínios personalizados
+  build: {
+    outDir: 'docs'  // Vamos usar a pasta docs para facilitar
+  },
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, './src/assets')
